@@ -1,0 +1,127 @@
+<div style="width: 95vw; height: 40vw; padding: 5rem 1rem">
+  <canvas id="numberOfCases"></canvas>
+</div>
+
+<div style="width: 95vw; height: 40vw; padding: 5rem 1rem">
+  <canvas id="numberOfVaccinated"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<script></script>
+
+<script>
+  window.onload = function () {
+    const ctx = new Chart(document.getElementById("numberOfCases"), {
+      type: "line",
+      data: {
+        labels: [
+          "31st March 2020",
+          "30th April 2020",
+          "31st May 2020",
+          "30th June 2020",
+          "31st July 2020",
+          "31st August 2020",
+          "30th September 2020",
+          "30th September 2020",
+          "31st October 2020",
+          "30th November 2020",
+          "31st December 2020",
+          "31st January 2021",
+          "28th February 2021",
+          "31st March 2021",
+          "30th April 2021",
+          "31st May 2021",
+          "30th June 2021",
+          "31st July 2021",
+          "31st August 2021",
+          "30th September 2021",
+          "31st October 2021",
+          "22nd November 2021",
+        ],
+        datasets: [
+          {
+            data: [
+              135, 1932, 10162, 25694, 43151, 54008, 58848, 62853, 67557, 87510,
+              131242, 155657, 162891, 165110, 166518, 167543, 173908, 192431,
+              205765, 211961, 213625,
+            ],
+            label: "Confirmed Cases",
+            borderColor: "#3e95cd",
+            fill: false,
+          },
+          {
+            data: [
+              29, 319, 3007, 9746, 19565, 41638, 50025, 58675, 63189, 73713,
+              104989, 133768, 151647, 155101, 158781, 163985, 164994, 178759,
+              193617, 203121, 206778,
+            ],
+            label: "Discharged Cases",
+            borderColor: "#8e5ea2",
+            fill: false,
+          },
+          {
+            data: [
+              2, 58, 287, 590, 879, 1013, 1112, 1144, 1173, 1289, 1586, 1907,
+              2056, 2063, 2099, 2120, 2149, 2469, 2720, 2896, 2974,
+            ],
+            label: "Death Cases",
+            borderColor: "#3cba9f",
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "Cummulative Number of Covid-19 Cases in Nigeria",
+          },
+        },
+      },
+    });
+
+    const ctx2 = new Chart(document.getElementById("numberOfVaccinated"), {
+      type: "line",
+      data: {
+        labels: [
+          "31st March",
+          "30th April",
+          "31st May",
+          "30th June",
+          "31st July",
+          "31st August",
+          "30th September",
+          "31st October",
+          "22nd November",
+        ],
+        datasets: [
+          {
+            data: [
+              718412, 1222109, 1960493, 2241662, 2550390, 2994933, 4790943,
+              5693300, 6079895,
+            ],
+            label: "At least one dose",
+            borderColor: "#3e95cd",
+            fill: false,
+          },
+          {
+            data: [
+              0, 0, 90735, 1155810, 1416623, 1437349, 1943821, 3079239, 3403492,
+            ],
+            label: "Fully vaccinated",
+            borderColor: "#8e5ea2",
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "Cummulative Number of people who received at least one dose of Covid-19 Vaccine & who are Vaccinated",
+          },
+        },
+      },
+    });
+  };
+</script>
