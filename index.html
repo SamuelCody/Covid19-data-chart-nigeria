@@ -36,14 +36,14 @@
           "31st August 2021",
           "30th September 2021",
           "31st October 2021",
-          "22nd November 2021",
+          "29th November 2021",
         ],
         datasets: [
           {
             data: [
               135, 1932, 10162, 25694, 43151, 54008, 58848, 62853, 67557, 87510,
               131242, 155657, 162891, 165110, 166518, 167543, 173908, 192431,
-              205765, 211961, 213625,
+              205765, 211961, 214113,
             ],
             label: "Confirmed Cases",
             borderColor: "#3e95cd",
@@ -53,7 +53,7 @@
             data: [
               29, 319, 3007, 9746, 19565, 41638, 50025, 58675, 63189, 73713,
               104989, 133768, 151647, 155101, 158781, 163985, 164994, 178759,
-              193617, 203121, 206778,
+              193617, 203121, 207292,
             ],
             label: "Discharged Cases",
             borderColor: "#8e5ea2",
@@ -62,7 +62,7 @@
           {
             data: [
               2, 58, 287, 590, 879, 1013, 1112, 1144, 1173, 1289, 1586, 1907,
-              2056, 2063, 2099, 2120, 2149, 2469, 2720, 2896, 2974,
+              2056, 2063, 2099, 2120, 2149, 2469, 2720, 2896, 2976,
             ],
             label: "Death Cases",
             borderColor: "#3cba9f",
@@ -76,6 +76,28 @@
             display: true,
             text: "Cummulative Number of Covid-19 Cases in Nigeria",
           },
+        },
+        scales: {
+          xAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
+          yAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
         },
       },
     });
@@ -92,13 +114,13 @@
           "31st August",
           "30th September",
           "31st October",
-          "22nd November",
+          "29th November",
         ],
         datasets: [
           {
             data: [
               718412, 1222109, 1960493, 2241662, 2550390, 2994933, 4790943,
-              5693300, 6079895,
+              5693300, 6183844,
             ],
             label: "At least one dose",
             borderColor: "#3e95cd",
@@ -106,7 +128,7 @@
           },
           {
             data: [
-              0, 0, 90735, 1155810, 1416623, 1437349, 1943821, 3079239, 3403492,
+              0, 0, 90735, 1155810, 1416623, 1437349, 1943821, 3079239, 3456204,
             ],
             label: "Fully vaccinated",
             borderColor: "#8e5ea2",
@@ -118,7 +140,15 @@
         plugins: {
           title: {
             display: true,
-            text: "Cummulative Number of people who received at least one dose of Covid-19 Vaccine & who are Vaccinated",
+            text: "Cummulative Number of people who received at least one dose of Covid-19 Vaccine & who are Vaccinated in 2021",
+          },
+        },
+        scales: {
+          x: {
+            display: true,
+          },
+          y: {
+            display: true,
           },
         },
       },
