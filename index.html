@@ -2,71 +2,145 @@
   <canvas id="covidCases"></canvas>
 </div>
 
+<div style="width: 95vw; height: 40vw; padding: 5rem 1rem">
+  <canvas id="covidCasesLog"></canvas>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
 
 <script>
-  const ctx = new Chart(document.getElementById("covidCases"), {
-    type: "line",
-    plugins: [ChartDataSource],
-    data: {
-      datasets: [
-        {
-          label: "Confirmed Cases",
-          borderColor: "#3e95cd",
-          fill: false,
-        },
-        {
-          label: "Active Cases",
-          borderColor: "#2a9bf2",
-          fill: false,
-        },
-        {
-          label: "Discharged Cases",
-          borderColor: "#8e5ea2",
-          fill: false,
-        },
-        {
-          label: "Total Deaths",
-          borderColor: "#913831",
-          fill: false,
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        datasource: {
-          url: "data.xlsx",
-          rowMapping: "index",
-        },
-        title: {
-          display: true,
-          text: "Cummulative Number of Covid-19 Cases in Nigeria",
-        },
-      },
-      scales: {
-        xAxes: [
+  window.onload = function () {
+    const ctx = new Chart(document.getElementById("covidCases"), {
+      type: "line",
+      plugins: [ChartDataSource],
+      data: {
+        datasets: [
           {
-            display: true,
-            ticks: {
-              suggestedMin: 0, // minimum will be 0, unless there is a lower value.
-              // OR //
-              beginAtZero: true, // minimum value will be 0.
-            },
+            label: "Confirmed Cases",
+            borderColor: "#3e95cd",
+            fill: false,
           },
-        ],
-        yAxes: [
           {
-            display: true,
-            ticks: {
-              suggestedMin: 0, // minimum will be 0, unless there is a lower value.
-              // OR //
-              beginAtZero: true, // minimum value will be 0.
-            },
+            label: "Active Cases",
+            borderColor: "#2a9bf2",
+            fill: false,
+          },
+          {
+            label: "Discharged Cases",
+            borderColor: "#8e5ea2",
+            fill: false,
+          },
+          {
+            label: "Total Deaths",
+            borderColor: "#913831",
+            fill: false,
           },
         ],
       },
-    },
-  });
+      options: {
+        plugins: {
+          datasource: {
+            url: "data.xlsx",
+            rowMapping: "index",
+          },
+          title: {
+            display: true,
+            text: "Cummulative Number of Covid-19 Cases in Nigeria",
+          },
+        },
+        scales: {
+          xAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
+          yAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const ctx = new Chart(document.getElementById("covidCasesLog"), {
+      type: "line",
+      plugins: [ChartDataSource],
+      data: {
+        datasets: [
+          {
+            label: "Confirmed Cases",
+            borderColor: "#3e95cd",
+            fill: false,
+          },
+          {
+            label: "Active Cases",
+            borderColor: "#2a9bf2",
+            fill: false,
+          },
+          {
+            label: "Discharged Cases",
+            borderColor: "#8e5ea2",
+            fill: false,
+          },
+          {
+            label: "One Dose",
+            borderColor: "#923831",
+            fill: false,
+          },
+          {
+            label: "Fully Dose",
+            borderColor: "#e13831",
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          datasource: {
+            url: "NigerianDataLogVaccine.xlsx",
+            rowMapping: "index",
+          },
+          title: {
+            display: true,
+            text: "Cummulative Number (Log) of Covid-19 Cases in Nigeria",
+          },
+        },
+        scales: {
+          xAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
+          yAxes: [
+            {
+              display: true,
+              ticks: {
+                suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true, // minimum value will be 0.
+              },
+            },
+          ],
+        },
+      },
+    });
+  };
 </script>
